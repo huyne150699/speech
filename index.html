@@ -19,8 +19,8 @@
 <body>
     <button class="btn-start" id="btn-start" style="width:100px;height:50px;">音声開始</button>
     <button class="btn-end" id="btn-end" style="width: 100px;height:50px;">音声終了</button>
-    <textarea class=output></textarea>
-    <script src="app.js"></script>
+    <textarea class=output id="output"></textarea>
+    <script src="app.js" ></script>
 
     <script type="text/javascript">
 
@@ -36,12 +36,15 @@
             setColor('btn-start', 'red')
             var btn = document.getElementById("btn-start");
             btn.innerHTML = '認証中';
+            var txt = document.getElementById("output");
+            txt.innerHTML = '';
         }
 
         stopBtn.onclick = () => {
             setColor('btn-start', '#EAEEEF')
             var btn = document.getElementById("btn-start");
             btn.innerHTML = '音声開始';
+
         }
     </script>
 
