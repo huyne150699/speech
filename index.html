@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color:cyan;">
 
 <head>
     <title>speech to text</title>
@@ -9,7 +9,7 @@
         .output {
             display: block;
             width: 80%;
-            height: 400px;
+            height: 300px;
             margin: 50px auto;
         }
     </style>
@@ -17,10 +17,34 @@
 </head>
 
 <body>
-    <button class="btn-start">Start recording</button>
-    <button class="btn-end">End recording</button>
+    <button class="btn-start" id="btn-start" style="width:100px;height:50px;">音声開始</button>
+    <button class="btn-end" id="btn-end" style="width: 100px;height:50px;">音声終了</button>
     <textarea class=output></textarea>
     <script src="app.js"></script>
+
+    <script type="text/javascript">
+
+        function setColor(btn, color) {
+            var property = document.getElementById(btn);
+            property.style.backgroundColor = color;
+        }
+
+        const startBtn = document.querySelector('#btn-start');
+        const stopBtn = document.querySelector('#btn-end');
+
+        startBtn.onclick = () => {
+            setColor('btn-start', 'red')
+            var btn = document.getElementById("btn-start");
+            btn.innerHTML = '認証中';
+        }
+
+        stopBtn.onclick = () => {
+            setColor('btn-start', '#EAEEEF')
+            var btn = document.getElementById("btn-start");
+            btn.innerHTML = '音声開始';
+        }
+    </script>
+
 </body>
 
 </html>
